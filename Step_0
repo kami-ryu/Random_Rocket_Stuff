@@ -1,0 +1,25 @@
+Delta_V = 0 
+Numb_Engines = 2
+Payload_Mass = 3000 # kg
+Tank_Mass = 5000 # kg
+
+RP1_Mass = 178389 # kg
+Oxid_Mass = 68611 # kg
+
+RD191_Mass = 2290 # kg
+RD191_Thrust = 1920 # kN 
+Isp = 300 # m/s
+
+Earth_Gravity = 9.81 # m/s^2
+
+Dry_Mass = Payload_Mass + Tank_Mass + Numb_Engines*RD191_Mass # kg
+
+Ship_Mass = Dry_Mass + RP1_Mass + Oxid_Mass
+
+Thrust = RD191_Thrust * Numb_Engines 
+
+Thrust_to_weight = Thrust*1000 / (Ship_Mass*Earth_Gravity)
+
+print("The Ship Mass is: ", Ship_Mass, "kg")
+print("The Thrust is: ", Thrust, "kN")
+print("The T:W is: ", Thrust_to_weight)
