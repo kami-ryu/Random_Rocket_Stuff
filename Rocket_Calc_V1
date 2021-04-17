@@ -1,0 +1,89 @@
+
+
+class Rocket:
+    def __init__(self):
+        pass
+
+
+class Assembly:
+    def __init__(self):
+        pass
+
+
+class Part:
+    def __init__(self,mass,reliab,wear,manu_cost):
+        self.mass = mass
+        self.reliab = reliab
+        self.wear = wear
+        self.manu_cost = manu_cost
+
+
+class RocketEngine:
+    def __init__(self,part_list):
+        self.part_list = part_list
+
+        self.mass = 0
+        for part in part_list:
+            self.mass += part[0]
+
+        self.reliability = 1
+        for part in part_list:
+            self.reliability -= part[1]
+
+        self.wear = 0
+        for part in part_list:
+            self.wear += part[2]
+
+        self.manu_cost = 0
+        for part in part_list:
+            self.manu_cost += part[3]
+
+        self.thrust = 100
+        self.isp = 240
+        self.fuel_burn = 120
+        self.oxid_burn = 120
+        
+
+
+Nozzle_A = [50,0.001,0,9]
+Injector_A = [5,0.005,0,8]
+Turbine_A = [10,0.15,0,15]
+CombustionChamber_A = [45,0.001,0,10]
+
+Rutherford_Part_List = [Nozzle_A,Injector_A,Turbine_A,CombustionChamber_A]
+Rutherford = RocketEngine(Rutherford_Part_List)
+print(Rutherford.mass)
+print(Rutherford.reliability)
+print(Rutherford.wear)
+print(Rutherford.manu_cost)
+
+
+class EngineMount:
+    pass
+
+
+class FuelTank:
+    pass
+
+
+class OxidTank:
+    pass
+
+
+class PayLoad:
+    pass
+
+
+class Fairing:
+    pass
+
+
+class Guidance:
+    pass
+
+
+Stage1_Assembly_0 = []
+Stage2_Assembly_0 = []
+
+Rocket_Stage1 = Stage1_Assembly_0
+Rocket_Stage2 = Stage2_Assembly_0
